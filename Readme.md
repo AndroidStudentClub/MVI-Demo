@@ -3,7 +3,7 @@
 - В данном примере используется собственная реализация MVI (см. ru.androidschool.mvi.MainActivity )
 - В RoxyMainActivity используется библиотека [Roxy](https://github.com/ww-tech/roxie)
 
-State — состояние системы, которое описывают текущее состояние приложения.
+### State — состояние системы, которое описывают текущее состояние приложения.
 ![State](images/mvi_state.png)
 
 ```kotlin
@@ -25,7 +25,7 @@ data class FeedViewState(
 }
 ```
 
-View — отрисовывает State. Показать данные/лоадер/состояние ошибки etc.
+### View — отрисовывает State. Показать данные/лоадер/состояние ошибки etc.
 ![View](images/mvi_view.png)
 
 ```kotlin
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
 
 ```
 
-Intent (Action) - события в системе (клик/свайп). Помогают из UI сообщить о произошедших изменений и уведомить об этом модель.
+### Intent (Action) - события в системе (клик/свайп). Помогают из UI сообщить о произошедших изменений и уведомить об этом модель.
 
 ![Intent](images/mvi_intent.png)
 
@@ -94,7 +94,7 @@ sealed class FeedIntent {
 }
 ```
 
-Processor — обрабатывает Intent
+### Processor — обрабатывает Intent
 
 ![Processor](images/mvi_processor.png)
 
@@ -158,8 +158,7 @@ sealed class FeedProcessor {
 }
 ```
 
-
-Result (Change/Effect/Internal Action) — результат изменения от Intent. Например загрузка данных/поход в базу данных 
+### Result (Change/Effect/Internal Action) — результат изменения от Intent. Например загрузка данных/поход в базу данных 
 
 ![Result](images/mvi_result.png)
 
@@ -179,7 +178,7 @@ sealed class FeedResult {
 }
 ```
 
-Reducer — чистая функция с сигнатурой (State, Action) -> State. Единственное место, где разрешено изменение стейта
+### Reducer — чистая функция с сигнатурой (State, Action) -> State. Единственное место, где разрешено изменение стейта
 
 ![Result](images/mvi_reducer.png)
 
